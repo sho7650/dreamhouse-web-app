@@ -76,7 +76,9 @@ app.get('/favorite', function (req, res) {
 });
 
 app.post('/favorite', function (req, res) {
-  client.query('INSERT INTO ' + favoriteTable + ' (id__c, property__c) VALUES (uuid_generate_v4(), $1)', [req.body.property__c], function (error, data) {
+  var client_query = 'INSERT INTO ' + favoriteTable + ' (id__c, property__c) VALUES (uuid_generate_v4(), $1)', [req.body.property__c];
+  console.log('favorite!' + client_query);
+  client.query(client_query, function (error, data) {
     res.json(data);
   });
 });
