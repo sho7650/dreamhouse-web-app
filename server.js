@@ -77,6 +77,7 @@ app.get('/favorite', function (req, res) {
 
 app.post('/favorite', function (req, res) {
   var client_query = 'INSERT INTO ' + favoriteTable + ' (id__c, property__c) VALUES (uuid_generate_v4(), $1), ' + req.body.property__c;
+  console.log(client_query);
   client.query('INSERT INTO ' + favoriteTable + ' (id__c, property__c) VALUES (uuid_generate_v4(), $1)', [req.body.property__c], function (error, data) {
     res.json(data);
   });
