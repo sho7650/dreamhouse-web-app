@@ -21,7 +21,7 @@ const client = new pg.Client(connectionString);
 client.connect();
 
 var propertyTable = 'property__c';
-var favoriteTable = 'favorite__c';
+var favoriteTable = 'property_favorite__c';
 var brokerTable = 'broker__c';
 
 client.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"');
@@ -70,7 +70,7 @@ app.get('/property/:sfid', function (req, res) {
 
 
 app.get('/favorite', function (req, res) {
-  client.query('SELECT ' + propertyTable + '.*, ' + favoriteTable + '.sfid AS property_favorite__c_sfid FROM ' + propertyTable + ', ' + favoriteTable + ' WHERE ' + propertyTable + '.sfid = ' + favoriteTable + '.property__c', function (error, data) {
+  client.query('SELECT ' + propertyTable + '.*, ' + favoriteTable + '.sfid AS favorite__c_sfid FROM ' + propertyTable + ', ' + favoriteTable + ' WHERE ' + propertyTable + '.sfid = ' + favoriteTable + '.property__c', function (error, data) {
     res.json(data.rows);
   });
 });
