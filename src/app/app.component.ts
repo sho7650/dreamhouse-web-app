@@ -1,13 +1,13 @@
-import {Component, ViewChild} from '@angular/core';
-import {Nav, Platform} from 'ionic-angular';
-import {StatusBar} from '@ionic-native/status-bar';
-import {SplashScreen} from '@ionic-native/splash-screen';
+import { Component, ViewChild } from '@angular/core';
+import { Nav, Platform } from 'ionic-angular';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
-import {PropertyListPage} from '../pages/property-list/property-list';
-import {BrokerListPage} from '../pages/broker-list/broker-list';
-import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
-import {WelcomePage} from '../pages/welcome/welcome';
-import {AboutPage} from '../pages/about/about';
+import { PropertyListPage } from '../pages/property-list/property-list';
+import { BrokerListPage } from '../pages/broker-list/broker-list';
+import { FavoriteListPage } from '../pages/favorite-list/favorite-list';
+import { WelcomePage } from '../pages/welcome/welcome';
+import { AboutPage } from '../pages/about/about';
 
 export interface MenuItem {
     title: string;
@@ -33,20 +33,20 @@ export class MyApp {
         this.initializeApp();
 
         this.appMenuItems = [
-            {title: 'Properties', component: PropertyListPage, icon: 'home'},
-            {title: 'Brokers', component: BrokerListPage, icon: 'people'},
-            {title: 'Favorites', component: FavoriteListPage, icon: 'star'},
-            {title: 'Get Preapproved', component: WelcomePage, icon: 'checkmark-circle'},
+            { title: 'ようこそ', component: WelcomePage, icon: 'bookmark' },
+            { title: '物件一覧', component: PropertyListPage, icon: 'home' },
+            { title: '仲介者一覧', component: BrokerListPage, icon: 'people' },
+            { title: 'お気に入り', component: FavoriteListPage, icon: 'star' },
         ];
 
         this.accountMenuItems = [
-            {title: 'My Account', component: WelcomePage, icon: 'ios-contact'},
-            {title: 'Logout', component: WelcomePage, icon: 'log-out'},
+            { title: 'プロフィール', component: WelcomePage, icon: 'ios-contact' },
+            { title: 'ログアウト', component: AboutPage, icon: 'log-out' },
         ];
 
         this.helpMenuItems = [
-            {title: 'Welcome', component: WelcomePage, icon: 'bookmark'},
-            {title: 'About', component: AboutPage, icon: 'information-circle'},
+            { title: '事前承認を取得', component: WelcomePage, icon: 'checkmark-circle' },
+            { title: '資料請求', component: AboutPage, icon: 'information-circle' },
         ];
 
     }

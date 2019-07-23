@@ -2,11 +2,11 @@
 
   <ion-content>
 
-    <img src="assets/img/dreamhouse-logo.svg" class="menu-logo"/>
+    <img src="assets/img/dreamhouse-logo.svg" class="menu-logo" />
 
     <ion-list>
       <ion-list-header>
-        Shop
+        物件の検索
       </ion-list-header>
       <button menuClose ion-item *ngFor="let menuItem of appMenuItems" (click)="openPage(menuItem)">
         <ion-icon item-left [name]="menuItem.icon"></ion-icon>
@@ -16,7 +16,7 @@
 
     <ion-list>
       <ion-list-header>
-        Help
+        住宅ローン
       </ion-list-header>
       <button menuClose ion-item *ngFor="let menuItem of helpMenuItems" (click)="openPage(menuItem)">
         <ion-icon item-left [name]="menuItem.icon"></ion-icon>
@@ -26,7 +26,7 @@
 
     <ion-list>
       <ion-list-header>
-        Account
+        アカウント
       </ion-list-header>
       <button menuClose ion-item *ngFor="let menuItem of accountMenuItems" (click)="openPage(menuItem)">
         <ion-icon item-left [name]="menuItem.icon"></ion-icon>
