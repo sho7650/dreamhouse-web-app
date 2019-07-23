@@ -20,7 +20,6 @@ export class FavoriteListPage {
     }
 
     deleteItem(favorite) {
-        console.log("deleteItem" + JSON.stringify(favorite));
         this.service.unfavorite(favorite)
             .then(() => {
                 this.getFavorites();

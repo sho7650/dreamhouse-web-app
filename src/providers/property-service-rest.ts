@@ -12,7 +12,7 @@ let prettifyProperty = (property) => {
         address: property.address__c,
         city: property.city__c,
         state: property.state__c,
-        price: "$" + property.price__c.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+        price: "￥" + property.price__c.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
         bedrooms: property.beds__c,
         bathrooms: property.baths__c,
         description: property.description__c,
@@ -33,7 +33,7 @@ let prettifyProperty = (property) => {
 
 let prettifyFavorite = (favorite) => {
     return {
-        id: favorite.property_favorite__c_sfid,
+        id: favorite.favorite__c_sfid,
         property: prettifyProperty(favorite)
     };
 };
