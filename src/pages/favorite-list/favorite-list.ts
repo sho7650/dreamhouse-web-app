@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
-import {PropertyService} from '../../providers/property-service-rest';
-import {PropertyDetailPage} from '../property-detail/property-detail';
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import { PropertyService } from '../../providers/property-service-rest';
+import { PropertyDetailPage } from '../property-detail/property-detail';
 
 @Component({
     selector: 'page-favorite-list',
@@ -20,6 +20,7 @@ export class FavoriteListPage {
     }
 
     deleteItem(favorite) {
+        console.log("deleteItem" + JSON.stringify(favorite));
         this.service.unfavorite(favorite)
             .then(() => {
                 this.getFavorites();
