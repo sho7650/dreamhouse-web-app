@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {Http, Headers} from '@angular/http';
+import { Injectable } from '@angular/core';
+import { Http, Headers } from '@angular/http';
 
 /*
     Prettify objects returned from Salesforce. This is optional, but it allows us to keep the templates independent
@@ -33,7 +33,7 @@ let prettifyProperty = (property) => {
 
 let prettifyFavorite = (favorite) => {
     return {
-        id: favorite.favorite__c_sfid,
+        id: favorite.property_favorite__c_sfid,
         property: prettifyProperty(favorite)
     };
 };
@@ -47,7 +47,7 @@ export class PropertyService {
         return this.http.get('/property').map(response => response.json().map(prettifyProperty)).toPromise();
     }
 
-    findByName(key:string) {
+    findByName(key: string) {
         return this.http.get('/property?key=' + key).map(response => response.json().map(prettifyProperty)).toPromise();
     }
 
@@ -62,7 +62,7 @@ export class PropertyService {
     favorite(property) {
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/favorite', JSON.stringify({ 'property__c': property.id }), {headers: headers}).toPromise();
+        return this.http.post('/favorite', JSON.stringify({ 'property__c': property.id }), { headers: headers }).toPromise();
     }
 
     unfavorite(favorite) {
