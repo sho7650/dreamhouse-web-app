@@ -33,7 +33,8 @@ let prettifyProperty = (property) => {
 
 let prettifyFavorite = (favorite) => {
     return {
-        id: favorite.favorite__c_sfid,
+        sfid: favorite.favorite__c_sfid,
+        id: favorite.favorite__id,
         property: prettifyProperty(favorite)
     };
 };
