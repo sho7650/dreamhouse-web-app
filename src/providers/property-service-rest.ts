@@ -66,7 +66,6 @@ export class PropertyService {
     }
 
     unfavorite(favorite) {
-        console.log("unfavorite" + favorite.id);
         return this.http.delete('/favorite/' + favorite.id).toPromise();
     }
 
