@@ -29,6 +29,12 @@ Heroku Connect を使う場合:
 1. Heroku Connect をセットアップします。Heroku アプリの管理ダッシュボードの［Resources］タブの［*Heroku Connect*］をクリックします `https://dashboard.heroku.com/apps/YOUR_APP_NAME/resources`
 1. `Property__c` を読み込み専用でマッピングへ追加します。マッピング対象のフィールドは次の通り: `address__c, baths__c, beds__c, broker__c, city__c, description__c, location__latitude__s, location__longitude__s, picture__c, price__c, state__c, tags__c, thumbnail__c, title__c`
 1. `Broker__c` も同様に読み込み専用で、次のフィールドとともにマッピングを追加します: `email__c, mobile_phone__c, phone__c, picture__c, title__c`
-1. `Property_Favorite__c` は双方向の設定でマッピングしますた対象のフィールドは次の通り: `Property__c, User__c`
-2. 新しいデータベーステーブルが使用されるように、アプリを再起動します
-3. アプリを確認し、Salesforce で物件の価格を変更したときに同期が機能するかどうかを検証します
+2. `Property_Favorite__c` オブジェクトに、項目を一つ追加します。Salesforceの「設定」画面からオブジェクトマネージャを開きます。その中から`Property Favorite`ひ開きます。「項目とリレーション」から「新規」で次の通りフィールドを作ります。
+   1. `データ型` : テキスト - 36文字
+   2. `項目の表示ラベル` : Id
+   3. `項目名` : Id
+   4. `ユニーク` : 値の重複を許可しない - 「ABC」と「abc」を値の重複として扱う(大文字と小文字を区別しない)
+   5. `外部ID` : 外部システムの一位のレコード識別子として設定する
+3. `id__c` を外部IDとして設定して、`Property_Favorite__c` を双方向の設定でマッピングします。対象のフィールドは次の通り: `Property__c, User__c, Id__c`
+5. 新しいデータベーステーブルが使用されるように、アプリを再起動します
+6. アプリを確認し、Salesforce で物件の価格を変更したときに同期が機能するかどうかを検証します
