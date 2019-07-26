@@ -82,7 +82,7 @@ app.post('/favorite', function (req, res) {
 });
 
 app.delete('/favorite/:id', function (req, res) {
-  client.query('DELETE FROM ' + favoriteTable + ' WHERE id = $1', [req.params.id], function (error, data) {
+  client.query('DELETE FROM ' + favoriteTable + ' WHERE id__c = $1', [req.params.id], function (error, data) {
     res.json(data);
   });
 });
