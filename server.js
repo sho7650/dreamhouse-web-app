@@ -70,7 +70,7 @@ app.get('/property/:sfid', function (req, res) {
 
 
 app.get('/favorite', function (req, res) {
-  client.query('SELECT ' + propertyTable + '.*, ' + favoriteTable + '.sfid AS favorite__c_sfid, ' + favoriteTable + '.id AS favorite__id FROM ' + propertyTable + ', ' + favoriteTable + ' WHERE ' + propertyTable + '.sfid = ' + favoriteTable + '.property__c', function (error, data) {
+  client.query('SELECT ' + propertyTable + '.*, ' + favoriteTable + '.sfid AS favorite__c_sfid, ' + favoriteTable + '.id__c AS favorite__id FROM ' + propertyTable + ', ' + favoriteTable + ' WHERE ' + propertyTable + '.sfid = ' + favoriteTable + '.property__c', function (error, data) {
     res.json(data.rows);
   });
 });
