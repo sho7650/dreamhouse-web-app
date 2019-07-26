@@ -24,7 +24,9 @@ var propertyTable = 'property__c';
 var favoriteTable = 'property_favorite__c';
 var brokerTable = 'broker__c';
 
-client.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"');
+// generate new random uuid argorithm
+// client.query('CREATE EXTENSION IF NOT EXISTS "uuid-ossp"');
+client.query('CREATE EXTENSION IF NOT EXISTS pgcrypto;');
 
 // setup the demo data if needed
 client.query('SELECT * FROM salesforce.broker__c', function (error, data) {
@@ -76,7 +78,7 @@ app.get('/favorite', function (req, res) {
 });
 
 app.post('/favorite', function (req, res) {
-  client.query('INSERT INTO ' + favoriteTable + ' (id__c, property__c) VALUES (uuid_generate_v4(), $1)', [req.body.property__c], function (error, data) {
+  client.query('INSERT INTO ' + favoriteTable + ' (id__c, property__c) VALUES (gen_random_uuid(), $1)', [req.body.property__c], function (error, data) {
     res.json(data);
   });
 });
