@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 
-declare var window.attachEvent;
+declare var window;
 
 @Component({
   selector: 'page-about',
