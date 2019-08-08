@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 
-declare var window;
+declare var piTracker;
 
 @Component({
   selector: 'page-about',
@@ -11,7 +11,7 @@ declare var window;
 export class AboutPage {
 
   constructor(public navCtrl: NavController) {
-
+    piTracker(document.URL + "about.html");
   }
 
 }
