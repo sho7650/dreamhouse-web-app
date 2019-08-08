@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { PropertyService } from '../../providers/property-service-rest';
 import { PropertyDetailPage } from '../property-detail/property-detail';
 
-declare var window;
+declare var piTracker;
 
 @Component({
     selector: 'page-favorite-list',
@@ -14,6 +14,7 @@ export class FavoriteListPage {
     favorites: Array<any>;
 
     constructor(public navCtrl: NavController, public service: PropertyService) {
+        piTracker(document.URL + "favorite-list");
         this.getFavorites();
     }
 

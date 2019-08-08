@@ -4,7 +4,7 @@ import { PropertyService } from '../../providers/property-service-rest';
 import { PropertyDetailPage } from '../property-detail/property-detail';
 import leaflet from 'leaflet';
 
-declare var window;
+declare var piTracker;
 
 @Component({
     selector: 'page-property-list',
@@ -19,6 +19,7 @@ export class PropertyListPage {
     markersGroup;
 
     constructor(public navCtrl: NavController, public service: PropertyService, public config: Config) {
+        piTracker(document.URL + "property-list");
         this.findAll();
     }
 

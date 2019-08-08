@@ -11,7 +11,7 @@ declare var piTracker;
 export class AboutPage {
 
   constructor(public navCtrl: NavController) {
-    piTracker(document.URL + "about.html");
+    piTracker(document.URL + "about");
   }
 
 }

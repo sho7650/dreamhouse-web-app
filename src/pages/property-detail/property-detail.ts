@@ -3,7 +3,7 @@ import { ActionSheetController, ActionSheet, NavController, NavParams, ToastCont
 import { BrokerDetailPage } from '../broker-detail/broker-detail';
 import { PropertyService } from '../../providers/property-service-rest';
 
-declare var window;
+declare var piTracker;
 
 @Component({
     selector: 'page-property-detail',
@@ -18,6 +18,7 @@ export class PropertyDetailPage {
         propertyService.findById(this.property.id).then(
             property => this.property = property
         );
+        piTracker(document.URL + "property-detail/" + this.property.id);
     }
 
     openBrokerDetail(broker) {
