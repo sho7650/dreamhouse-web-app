@@ -32,6 +32,8 @@ module.exports = function (client) {
   client.query(`CREATE TABLE property_favorite__c (
    id__c uuid PRIMARY KEY,
    sfid CHARACTER VARYING(18) UNIQUE,
+   lead__c CHARACTER VARYING(18),
+   contact__c CHARACTER VARYING(18),
    property__c CHARACTER VARYING(18) REFERENCES property__c(sfid)
   );`);
 
