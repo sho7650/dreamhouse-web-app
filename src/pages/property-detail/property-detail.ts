@@ -18,7 +18,7 @@ export class PropertyDetailPage {
         propertyService.findById(this.property.id).then(
             property => this.property = property
         );
-        piTracker(document.URL + "property-detail/" + this.property.id);
+        setTimeout(piTracker(document.URL + "broker-detail/" + this.property.id), 1000);
     }
 
     openBrokerDetail(broker) {
