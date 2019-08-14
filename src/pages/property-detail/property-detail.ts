@@ -15,10 +15,10 @@ export class PropertyDetailPage {
 
     constructor(public actionSheetCtrl: ActionSheetController, public navCtrl: NavController, public navParams: NavParams, public propertyService: PropertyService, public toastCtrl: ToastController) {
         this.property = this.navParams.data;
+        setTimeout(piTracker(document.URL + "property-detail/" + this.property.id), 1000);
         propertyService.findById(this.property.id).then(
             property => this.property = property
         );
-        setTimeout(piTracker(document.URL + "broker-detail/" + this.property.id), 1000);
     }
 
     openBrokerDetail(broker) {
