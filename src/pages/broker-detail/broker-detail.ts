@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { BrokerService } from '../../providers/broker-service-rest';
 
-declare var piTracker;
+declare var piTracker, interval_id;
 
 @Component({
     selector: 'page-broker-detail',
@@ -17,7 +17,7 @@ export class BrokerDetailPage {
         service.findById(this.broker.id).then(
             broker => this.broker = broker
         );
-        piTracker(document.URL + "broker-detail/" + this.broker.id);
+        interval_id = setInterval(piTracker(document.URL + "broker-detail/" + this.broker.id), 100);
     }
 
 }
