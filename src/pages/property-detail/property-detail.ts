@@ -15,7 +15,11 @@ export class PropertyDetailPage {
 
     constructor(public actionSheetCtrl: ActionSheetController, public navCtrl: NavController, public navParams: NavParams, public propertyService: PropertyService, public toastCtrl: ToastController) {
         this.property = this.navParams.data;
-        interval_id = setInterval(findTitle(document.URL + "property-detail/" + this.property.id), 100);
+
+        document.title = this.property.name;
+        piTracker(`/broker-detail/${this.property.id}`);
+
+        //    interval_id = setInterval(findTitle(document.URL + "property-detail/" + this.property.id), 100);
         propertyService.findById(this.property.id).then(
             property => this.property = property
         );

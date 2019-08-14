@@ -14,7 +14,9 @@ export class FavoriteListPage {
     favorites: Array<any>;
 
     constructor(public navCtrl: NavController, public service: PropertyService) {
-        interval_id = setInterval(findTitle(document.URL + "favorite-list"), 100);
+        document.title = "お気に入りリスト";
+        piTracker("/favorite-list");
+        // interval_id = setInterval(findTitle(document.URL + "favorite-list"), 100);
         this.getFavorites();
     }
 
