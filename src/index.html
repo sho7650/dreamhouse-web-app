@@ -36,9 +36,9 @@
 
     let interval_id;
 
-    const findTitle = (callback) => {
+    const findTitle = (documentURL) => {
       if (document.title.length > 0) {
-        callback();
+        piTracker(documentURL);
         clearInterval(interval_id);
       }
     }
