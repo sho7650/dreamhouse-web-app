@@ -33,15 +33,17 @@
     piAId = '795053';
     piCId = '2267';
     piHostname = 'pi.pardot.com';
+    oldTitle = '';
+    newTitle = '';
 
-    let interval_id;
+    interval_id = '';
 
-    const findTitle = (documentURL, regexpTitle) => {
-      const regexp = new RegExp(regexpTitle);
-      console.log(`取得したタイトル : ${document.title}`);
+    const findTitle = (documentURL) => {
+      newTitle = docuemnt.title;
+      console.log(newTitle);
+      if (newTitle != oldTitle) {
+        oldTitle = newTitle;
 
-      if (document.title.match(regexp)) {
-        console.log(`マッチした正規表現: ${regexpTitle}`);
         piTracker(documentURL);
         clearInterval(interval_id);
       }

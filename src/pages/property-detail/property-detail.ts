@@ -3,7 +3,7 @@ import { ActionSheetController, ActionSheet, NavController, NavParams, ToastCont
 import { BrokerDetailPage } from '../broker-detail/broker-detail';
 import { PropertyService } from '../../providers/property-service-rest';
 
-declare var piTracker;
+declare var piTracker, interval_id, findTitle;
 
 @Component({
     selector: 'page-property-detail',
@@ -15,7 +15,7 @@ export class PropertyDetailPage {
 
     constructor(public actionSheetCtrl: ActionSheetController, public navCtrl: NavController, public navParams: NavParams, public propertyService: PropertyService, public toastCtrl: ToastController) {
         this.property = this.navParams.data;
-        setTimeout(piTracker(document.URL + "property-detail/" + this.property.id), 1000);
+        interval_id = setInterval(findTitle(document.URL + "property-detail/" + this.property.id), 100);
         propertyService.findById(this.property.id).then(
             property => this.property = property
         );
