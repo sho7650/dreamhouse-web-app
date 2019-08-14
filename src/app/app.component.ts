@@ -29,6 +29,8 @@ export class MyApp {
 
     helpMenuItems: Array<MenuItem>;
 
+    mailMagazineItem: { title: string; component: any; icon: string; }[];
+
     constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
         this.initializeApp();
 
@@ -46,7 +48,9 @@ export class MyApp {
 
         this.helpMenuItems = [
             { title: '事前承認を取得', component: WelcomePage, icon: 'checkmark-circle' }
-            // { title: 'メルマガ登録', component: AboutPage, icon: 'information-circle' },
+        ];
+        this.mailMagazineItem = [
+            { title: 'メルマガ登録', component: AboutPage, icon: 'checkmark-circle' }
         ];
 
     }
@@ -64,5 +68,9 @@ export class MyApp {
         // Reset the content nav to have just this page
         // we wouldn't want the back button to show in this scenario
         this.nav.setRoot(page.component);
+    }
+
+    goMailMagazine() {
+        window.location.href = 'http://go.pardot.com/l/794053/2019-08-09/56q';
     }
 }
