@@ -36,8 +36,9 @@
 
     let interval_id;
 
-    const findTitle = (documentURL, checkTitle) => {
-      if (document.title === checkTitle) {
+    const findTitle = (documentURL, regexpTitle) => {
+      const regexp = new RegExp(regexpTitle);
+      if (document.title.match(regexp)) {
         piTracker(documentURL);
         clearInterval(interval_id);
       }
