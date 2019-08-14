@@ -39,7 +39,9 @@
     const findTitle = (documentURL, regexpTitle) => {
       const regexp = new RegExp(regexpTitle);
       console.log(`取得したタイトル : ${document.title}`);
+
       if (document.title.match(regexp)) {
+        console.log(`マッチした正規表現: ${regextTitle}`);
         piTracker(documentURL);
         clearInterval(interval_id);
       }

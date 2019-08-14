@@ -12,7 +12,7 @@ export class AboutPage {
 
   constructor(public navCtrl: NavController) {
     // piTracker(document.URL + "about");
-    window.location.replace("http://www.w3schools.com");
+    window.location.replace("http://go.pardot.com/l/794053/2019-08-09/56q");
   }
 
 }
