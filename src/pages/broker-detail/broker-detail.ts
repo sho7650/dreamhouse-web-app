@@ -15,7 +15,7 @@ export class BrokerDetailPage {
     constructor(public navCtrl: NavController, public navParams: NavParams, public service: BrokerService) {
         this.broker = this.navParams.data;
         document.title = this.broker.name;
-        piTracker(`/broker-detail/${this.broker.id}`);
+        piTracker(`${document.URL}broker-detail/${this.broker.id}`);
 
         service.findById(this.broker.id).then(
             broker => this.broker = broker

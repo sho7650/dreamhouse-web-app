@@ -19,6 +19,7 @@ export class PropertyListPage {
     markersGroup;
 
     constructor(public navCtrl: NavController, public service: PropertyService, public config: Config) {
+        document.title = "物件一覧";
         piTracker(document.URL + "property-list");
         this.findAll();
     }

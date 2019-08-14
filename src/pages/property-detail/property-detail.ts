@@ -16,8 +16,8 @@ export class PropertyDetailPage {
     constructor(public actionSheetCtrl: ActionSheetController, public navCtrl: NavController, public navParams: NavParams, public propertyService: PropertyService, public toastCtrl: ToastController) {
         this.property = this.navParams.data;
 
-        document.title = this.property.name;
-        piTracker(`/broker-detail/${this.property.id}`);
+        document.title = this.property.title;
+        piTracker(`${document.URL}property-detail/${this.property.id}`);
 
         //    interval_id = setInterval(findTitle(document.URL + "property-detail/" + this.property.id), 100);
         propertyService.findById(this.property.id).then(

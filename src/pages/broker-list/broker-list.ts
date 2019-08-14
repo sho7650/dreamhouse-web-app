@@ -14,7 +14,8 @@ export class BrokerListPage {
     brokers: Array<any>;
 
     constructor(public navCtrl: NavController, public service: BrokerService) {
-        piTracker(document.URL + "broker-list");
+        document.title = "仲介者リスト";
+        piTracker(`${document.URL}broker-list`);
         service.findAll().then(data => this.brokers = data);
     }
 
