@@ -36,13 +36,8 @@
 
     let interval_id;
 
-    const findTitle = (documentURL) => {
-      let document_title;
-      document.querySelectorAll('title').forEach(v => {
-        document_title = v.innerText;
-      })
-
-      if (document.title === document_title) {
+    const findTitle = (documentURL, checkTitle) => {
+      if (document.title === checkTitle) {
         piTracker(documentURL);
         clearInterval(interval_id);
       }

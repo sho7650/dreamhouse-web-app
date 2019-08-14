@@ -11,7 +11,8 @@ declare var piTracker;
 export class AboutPage {
 
   constructor(public navCtrl: NavController) {
-    piTracker(document.URL + "about");
+    // piTracker(document.URL + "about");
+    window.location.replace("http://www.w3schools.com");
   }
 
 }
