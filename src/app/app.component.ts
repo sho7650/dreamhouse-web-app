@@ -45,8 +45,8 @@ export class MyApp {
         ];
 
         this.helpMenuItems = [
-            { title: '事前承認を取得', component: WelcomePage, icon: 'checkmark-circle' },
-            { title: 'メルマガ登録', component: AboutPage, icon: 'information-circle' },
+            { title: '事前承認を取得', component: WelcomePage, icon: 'checkmark-circle' }
+            // { title: 'メルマガ登録', component: AboutPage, icon: 'information-circle' },
         ];
 
     }
