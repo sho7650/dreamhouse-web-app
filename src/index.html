@@ -35,7 +35,8 @@
     piHostname = 'pi.pardot.com';
 
     const findTitle = (documentURL) => {
-      if (document.title.length > 0) {
+
+      if (document.title === document.querySelectorAll('title')[0].innerText) {
         piTracker(documentURL);
         clearInterval(interval_id);
       }
