@@ -78,7 +78,7 @@ app.get('/favorite', function (req, res) {
 });
 
 app.post('/favorite', function (req, res) {
-  client.query('INSERT INTO ' + favoriteTable + " (id__c, property__c, lead__c) VALUES (gen_random_uuid(), $1, '00Q2v00001VWbzzEAD')", [req.body.property__c], function (error, data) {
+  client.query('INSERT INTO ' + favoriteTable + " (id__c, property__c, lead__c, property_type__c) VALUES (gen_random_uuid(), $1, '00Q2v00001VWbzzEAD', $2)", [req.body.property__c], [req.body.property_type__c], function (error, data) {
     res.json(data);
   });
 });

@@ -18,6 +18,7 @@ let prettifyProperty = (property) => {
         description: property.description__c,
         picture: property.picture__c,
         thumbnail: property.thumbnail__c,
+        type: property.property_type__c,
         long: property.location__longitude__s,
         lat: property.location__latitude__s,
         tags: property.tags__c,
@@ -35,6 +36,7 @@ let prettifyFavorite = (favorite) => {
     return {
         sfid: favorite.favorite__c_sfid,
         id: favorite.favorite__id,
+        type: favorite.property_type__c,
         property: prettifyProperty(favorite)
     };
 };

@@ -25,6 +25,7 @@ module.exports = function (client) {
    title__c CHARACTER VARYING(100),
    picture__c CHARACTER VARYING(255),
    price__c DOUBLE PRECISION,
+   property_type__c CHARACTER VARYING(64),
    location__longitude__s DOUBLE PRECISION,
    location__latitude__s DOUBLE PRECISION
   );`);
@@ -34,6 +35,7 @@ module.exports = function (client) {
    sfid CHARACTER VARYING(18) UNIQUE,
    lead__c CHARACTER VARYING(18),
    contact__c CHARACTER VARYING(18),
+   property_type__c CHARACTER VARYING(64),
    property__c CHARACTER VARYING(18) REFERENCES property__c(sfid)
   );`);
 
