@@ -65,7 +65,7 @@ export class PropertyService {
     favorite(property) {
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('/favorite', JSON.stringify({ 'property__c': property.id }), { headers: headers }).toPromise();
+        return this.http.post('/favorite', JSON.stringify({ 'property__c': property.id, 'property_type__c': property.property_type__c }), { headers: headers }).toPromise();
     }
 
     unfavorite(favorite) {
